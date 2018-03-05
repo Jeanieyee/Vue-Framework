@@ -1,0 +1,317 @@
+//覆盖一些element-ui样式 覆盖css样式可在这里添加
+.el-menu--horizontal {
+  border-bottom: none;
+}
+
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+//暂时性解决 dialog 问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  top: 5% !important;
+  left: 0;
+  position: relative;
+  margin: 0 auto !important;
+}
+
+//element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+.el-menu {
+
+  .el-menu-item {
+    color: #CCCCCC;
+    background: #41485d !important;
+  }
+  .is-active {
+    //  color: #f2cd00 !important;
+    background: #272c38 !important;
+  }
+  .el-menu-item:hover {
+    color: #CCCCCC;
+    background: #272c38 !important;
+  }
+}
+
+.el-submenu {
+  .is-active {
+    //  color: #f2cd00 !important;
+    background: #272c38 !important;
+  }
+  .el-submenu__title {
+    background: #41485d !important;
+  }
+  .el-submenu__title:hover {
+    background: #272c38 !important;
+    color: #f2cd00;
+    //
+  }
+  //.el-menu-item:hover {
+  //  background: #272c38 !important;
+  //  color: #f2cd00 !important;
+  //
+  //}
+  //.el-menu {
+  //  background-color: #323745 !important;
+  //}
+  .el-menu-item {
+    color: #CCCCCC;
+    background: #272c38 !important;
+  }
+
+}
+
+.app-wrapper {
+  .sidebar-wrapper {
+    width: 160px;
+    .sidebar-container {
+      background: #323745;
+    }
+  }
+}
+
+.el-select {
+  .el-input {
+    .el-input__inner {
+      height: 30px;
+      border-radius: 0px;
+    }
+  }
+  width: 100%;
+}
+
+.el-input {
+  .el-input__inner {
+    height: 30px;
+    border-radius: 0px;
+    border: 1px solid #dbdbdb;
+    font-size: 12px;
+  }
+}
+
+.el-form-item {
+  margin-bottom: 10px;
+}
+
+.el-button--primary {
+  font-size: 14px;
+  background: #f2cd00;
+  border: 1px #f2cd00 solid;
+  color: #333;
+  //width: 100px;
+}
+
+.el-button--primary:focus, .el-button--primary:hover, .el-button--primary:active {
+  background: #f2cd00 !important;
+  color: #333 !important;
+  border: 1px #f2cd00 solid !important;
+
+}
+
+//.el-button--default:hover{
+//  background: #ffffff;
+//  color: #333;
+//  border: 1px solid #c4c4c4;
+//
+//}
+.el-button {
+  //width: 100px;
+  font-size: 14px;
+}
+
+//.el-button:active,el-button:hover,el-button:focus{
+//  background: #ffffff;
+//  color: #333;
+//  border: 1px solid #c4c4c4;
+//}
+
+.el-table {
+  border: 1px solid #dcdcdc;
+
+}
+
+table tr:nth-of-type(even) {
+  background: #f9f9f9;
+}
+
+.el-table th {
+  background: #e8e8e8;
+  height: 30px;
+}
+
+.el-table td {
+  height: 50px;
+}
+
+.el-table--border td, .el-table--border th {
+  border: none;
+}
+
+.el-table td, .el-table th.is-leaf {
+  border: none;
+}
+
+.el-table__footer-wrapper thead div, .el-table__header-wrapper thead div {
+  background: none;
+}
+
+.el-table::after, .el-table::before {
+  background: none;
+}
+
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background: #eff6ff;
+}
+
+.el-pager li {
+  border: none;
+}
+
+.el-pager li.active {
+  background: #f2cd00;
+  color: #333;
+  border-radius: 4px;
+}
+
+.el-pagination .btn-next, .el-pagination .btn-prev {
+  border: none;
+}
+
+.el-pager li:last-child {
+  border: none;
+}
+
+.el-pagination {
+  text-align: right;
+  margin-top: 24px;
+}
+
+.el-form-item__content {
+  margin: 0 !important;
+}
+
+.el-form-item {
+  margin-bottom: 18px;
+}
+
+.dialog-footer {
+  text-align: center;
+  padding: 10px 20px 10px 20px;
+}
+
+.el-dialog__body {
+  padding: 30px 20px 0px 20px;
+}
+
+.nav-button {
+  .el-upload {
+    width: 100%;
+  }
+}
+
+.pic-table {
+  .el-checkbox__label {
+    display: none;
+  }
+  .el-checkbox-group {
+    display: inline-block;
+  }
+  .el-input {
+    width: 200px;
+    margin-left: 12px;
+  }
+
+}
+
+.delete-row {
+  .el-checkbox__label {
+    font-size: 12px;
+  }
+}
+
+.el-textarea__inner {
+  font-size: 12px;
+}
+
+.check-font .el-form-item {
+  margin-bottom: 10px;
+}
+
+.el-table td {
+  height: 60px;
+}
+
+.timepicker .el-input__inner {
+  border-radius: 4px !important;
+}
+
+.el-radio {
+  .el-radio__input {
+    .el-radio__inner {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .el-radio__label {
+    font-size: 12px;
+    line-height: 36px;
+  }
+}
+
+.el-cascader {
+  width: 100%;
+}
+
+.el-cascader--small {
+  line-height: 29px;
+}
+
+.el-input-number--small {
+  width: 100%;
+}
+
+.el-collapse {
+  .el-collapse-item {
+    .el-collapse-item__header {
+      //background-color: #F5A623 !important;
+      //color: #fff;
+      .el-collapse-item__header__arrow {
+        float: right;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+.tools-dialog {
+  .el-dialog {
+    width: 840px !important;
+  }
+}
+
+.el-form-item.is-success .el-input__inner,
+.el-form-item.is-success .el-input__inner:focus,
+.el-form-item.is-success .el-textarea__inner,
+.el-form-item.is-success .el-textarea__inner:focus{
+  border-color: #dbdbdb !important;
+}
+
+.el-input-number--mini{
+  line-height: 28px;
+}
