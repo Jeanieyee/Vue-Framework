@@ -2,13 +2,10 @@
   <div class="app-wrapper">
     <app-top></app-top>
     <div class="main-container">
-      <navbar></navbar>
       <app-main></app-main>
     </div>
   </div>
 </template>
-
-
 <script>
   import { Navbar, AppMain, AppTop } from '@/views/layout'
   export default {
@@ -20,13 +17,12 @@
     }
   }
 </script>
-
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "src/styles/mixin.scss";
-
   .app-wrapper {
     @include clearfix;
     position: relative;
+    padding-bottom: 100px;
     height: 100%;
     width: 100%;
     &.hideSidebar {
@@ -67,11 +63,13 @@
       overflow-x: hidden;
     }
     .main-container {
+      margin:30px auto 0 auto;
+      max-width: 1280px;
       min-height: 100%;
       transition: all .28s ease-out;
-      margin-left: 180px;
-      position: relative;
-      top: 60px;
+      /*margin-left: 180px;*/
+      /*position: relative;*/
+      /*top: 60px;*/
     }
   }
 </style>

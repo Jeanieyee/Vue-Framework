@@ -1,17 +1,9 @@
 import fetch from '@/utils/fetch'
 
-//获取所有枚举
-export function getEnums () {
-  return fetch({
-    url: '/data/enums',
-    method: 'post',
-  })
-}
-
 //获取七牛token
 export function getUpToken () {
   return fetch({
-    url: '/fileRes/token',
+    url: '/organize/qiniu/uptoken',
     method: 'post',
   })
 }
@@ -21,5 +13,19 @@ export function turnLang () {
   return fetch({
     url: '/user/changeLanguage',
     method: 'post',
+  })
+}
+//获取国籍
+export function country () {
+  return fetch({
+    url: '/organize/country',
+    method: 'post'
+  })
+}
+// 获取民族
+export function nation () {
+  return fetch({
+    url: '/organize/nation',
+    method: 'post'
   })
 }

@@ -14,12 +14,43 @@
 }
 
 //暂时性解决 dialog 问题 https://github.com/ElemeFE/element/issues/2461
-.el-dialog {
-  transform: none;
-  top: 5% !important;
-  left: 0;
-  position: relative;
+.el-dialog, .el-message-box {
+  border-radius: 8px;
+  top: 15% !important;
+  left: 50% !important;
+  position: absolute;
   margin: 0 auto !important;
+  transform: translate(-50%, 0);
+  overflow: hidden;
+  .el-dialog__header, .el-message-box__header {
+    position: relative;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+    line-height: 30px;
+  }
+  .el-dialog__body {
+    padding-bottom: 30px;
+  }
+  .el-dialog__footer {
+    padding-top: 20px;
+    background: #f9f9f9;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    .dialog-footer {
+      padding: 0px;
+      line-height: 30px;
+    }
+  }
+}
+
+.el-message-box {
+  .el-message-box__content {
+    padding: 30px;
+  }
+}
+
+.el-input__icon {
+  //line-height: 30px !important;
 }
 
 //element ui upload
@@ -31,50 +62,6 @@
       height: 200px;
     }
   }
-}
-
-.el-menu {
-
-  .el-menu-item {
-    color: #CCCCCC;
-    background: #41485d !important;
-  }
-  .is-active {
-    //  color: #f2cd00 !important;
-    background: #272c38 !important;
-  }
-  .el-menu-item:hover {
-    color: #CCCCCC;
-    background: #272c38 !important;
-  }
-}
-
-.el-submenu {
-  .is-active {
-    //  color: #f2cd00 !important;
-    background: #272c38 !important;
-  }
-  .el-submenu__title {
-    background: #41485d !important;
-  }
-  .el-submenu__title:hover {
-    background: #272c38 !important;
-    color: #f2cd00;
-    //
-  }
-  //.el-menu-item:hover {
-  //  background: #272c38 !important;
-  //  color: #f2cd00 !important;
-  //
-  //}
-  //.el-menu {
-  //  background-color: #323745 !important;
-  //}
-  .el-menu-item {
-    color: #CCCCCC;
-    background: #272c38 !important;
-  }
-
 }
 
 .app-wrapper {
@@ -107,23 +94,72 @@
 
 .el-form-item {
   margin-bottom: 10px;
+  .el-form-item__content {
+    display: inline-block;
+  }
+
 }
 
-.el-button--primary {
+.el-button {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 30px;
+}
+
+.el-button--primarty, .el-button--primary {
   font-size: 14px;
-  background: #f2cd00;
+  background: #F2CD00 !important;
   border: 1px #f2cd00 solid;
   color: #333;
-  //width: 100px;
 }
 
+.blueBtn {
+  border: 1px solid #4697ED;
+  background: #4697ED;
+  color: #ffffff;
+}
+
+.blueOrderBtn {
+  border: 1px solid #4A90E2;
+  color: #4A90E2;
+  background: #E8F3FF;
+}
+
+.blueBtn:focus, .blueBtn:hover, .blueBtn:active {
+  border: 1px solid #4697ED !important;
+  background: #4697ED !important;
+  color: #ffffff !important;
+}
+
+.el-button--primarty:focus, .el-button--primarty:hover, .el-button--primarty:active,
 .el-button--primary:focus, .el-button--primary:hover, .el-button--primary:active {
-  background: #f2cd00 !important;
+  background: #F2CD00 !important;
   color: #333 !important;
   border: 1px #f2cd00 solid !important;
-
 }
 
+.el-button--default:focus, .el-button--default:hover, .el-button--default:active {
+  background: #fff;
+  color: #606266;
+  border: 1px solid #dcdfe6;
+}
+
+.blueOrderBtn:focus, .blueOrderBtn:hover, .blueOrderBtn:active {
+  border: 1px solid #4A90E2 !important;
+  color: #4A90E2 !important;
+  background: #E8F3FF !important;
+}
+
+//.is-disabled, .is-disabled:focus, .is-disabled:hover, .is-disabled:active {
+//  border: 1px solid #cccccc !important;
+//  background: #cccccc !important;
+//  color: #ffffff !important;
+//}
+.disabledBtn, .disabledBtn:focus, .disabledBtn:hover, .disabledBtn:active {
+  border: 1px solid #cccccc !important;
+  background: #cccccc !important;
+  color: #ffffff !important;
+}
 //.el-button--default:hover{
 //  background: #ffffff;
 //  color: #333;
@@ -140,10 +176,14 @@
 //  color: #333;
 //  border: 1px solid #c4c4c4;
 //}
+.tableList {
+  .el-table__empty-block {
+    height: 200px;
+  }
+}
 
 .el-table {
   border: 1px solid #dcdcdc;
-
 }
 
 table tr:nth-of-type(even) {
@@ -199,7 +239,11 @@ table tr:nth-of-type(even) {
 
 .el-pagination {
   text-align: right;
-  margin-top: 24px;
+  margin-top: 1px;
+}
+
+.el-form-item__label {
+  font-size: 12px;
 }
 
 .el-form-item__content {
@@ -247,6 +291,8 @@ table tr:nth-of-type(even) {
 
 .el-textarea__inner {
   font-size: 12px;
+  resize: none;
+  height: 100%;
 }
 
 .check-font .el-form-item {
@@ -308,10 +354,142 @@ table tr:nth-of-type(even) {
 .el-form-item.is-success .el-input__inner,
 .el-form-item.is-success .el-input__inner:focus,
 .el-form-item.is-success .el-textarea__inner,
-.el-form-item.is-success .el-textarea__inner:focus{
+.el-form-item.is-success .el-textarea__inner:focus {
   border-color: #dbdbdb !important;
 }
 
-.el-input-number--mini{
+.el-input-number--mini {
   line-height: 28px;
+}
+
+.icon-popover {
+  padding: 5px 10px;
+  background: #323745;
+  min-width: 0px;
+  color: #fff;
+  font-size: 12px;
+  .popper__arrow {
+    &:after {
+      border-top-color: #323745 !important;
+    }
+  }
+}
+
+// progress
+.el-progress-bar {
+  .el-progress-bar__outer {
+    border: 1px solid #F2CD00;
+    background: #fff;
+    .el-progress-bar__inner {
+      background: #FFFADC;
+    }
+  }
+  .el-progress-bar__outer, .el-progress-bar__inner {
+    border-radius: 0;
+  }
+  .el-progress-bar__innerText {
+    color: #333;
+  }
+}
+
+.progress-popover {
+  background: #323745;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  .popper__arrow {
+    border-top-color: #323745;
+    &:after {
+      border-top-color: #323745 !important;
+    }
+  }
+}
+
+.trainProgressPopover {
+  background: #323745;
+  color: #ffffff;
+  .popper__arrow {
+    &:after {
+      border-top-color: #323745 !important;
+    }
+  }
+}
+
+.course-tree {
+  .is-required {
+    position: relative;
+    .el-form-item__content {
+      & > .el-input,
+      & > .el-select,
+      .choose-list {
+        &:after {
+          content: '*';
+          position: absolute;
+          left: -6px;
+          top: 4px;
+          color: #ff4949;
+        }
+      }
+    }
+  }
+}
+
+.el-tabs__item.is-active,
+.el-tabs__item:hover {
+  color: #F2CD00;
+}
+
+.el-tabs__active-bar {
+  background-color: #F2CD00;
+}
+
+.choose-list .el-input__inner{
+  border-color: #dbdbdb !important;
+}
+
+// step 步骤条
+.el-steps--horizontal{
+
+  .el-step__head{
+    color: #CCC;
+    border-color: #CCC;
+  }
+  .el-step__title{
+    color: #CCC;
+  }
+  .el-step__head.is-finish{
+    color: #F2CD00;
+    border-color: #F2CD00;
+  }
+  .el-step__title.is-finish{
+    color: #F2CD00;
+  }
+  .el-step.is-center .el-step__line{
+    //left: 0;
+    right: -100%;
+  }
+  &:first-child{
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 11px;
+      left: 20px;
+      width: 100px;
+      height: 2px;
+      background-color: #F2CD00;
+    }
+  }
+  //&:last-child{
+  //  position: relative;
+  //  &:before{
+  //    content: '';
+  //    position: absolute;
+  //    top: 11px;
+  //    right: 0;
+  //    width: 100px;
+  //    height: 2px;
+  //    background-color: #F2CD00;
+  //  }
+  //}
 }

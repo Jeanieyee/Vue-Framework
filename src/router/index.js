@@ -8,6 +8,7 @@ const _import = require('./_import_' + process.env.NODE_ENV)
 import Layout from '../views/layout/Layout'
 
 Vue.use(Router)
+const lang = i18n.messages[i18n.locale]
 /**
  * icon : the icon show in the sidebar
  * hidden : if `hidden:true` will not show in the sidebar
@@ -16,16 +17,16 @@ Vue.use(Router)
  * meta : `{ role: ['admin'] }`  will control the page role
  **/
 export const constantRouterMap = [
-  {path: '/login', component: _import('login/index'), hidden: true},
-  {path: '/404', component: _import('404'), hidden: true},
   {
     path: '/',
+    redirect: '/home',
     component: Layout,
-    name: 'Home',
-    hidden: true
+    meta: {title: lang.Home},
+    children: [
+      {path: 'home', component: _import('home/index'), meta: {title: lang.Home}}
+    ]
   }
 ]
-
 export default new Router({
   // mode: 'history', //后端支持可开
   scrollBehavior: () => ({y: 0}),
@@ -33,5 +34,5 @@ export default new Router({
 })
 
 export const asyncRouterMap = [
-  {path: '*', redirect: '/404', component: _import('404'), hidden: true},
+  {path: '*', redirect: '/404', component: _import('404'), hidden: true}
 ]

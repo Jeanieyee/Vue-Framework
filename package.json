@@ -8,12 +8,14 @@
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "test": "node build/build-test.js"
   },
   "dependencies": {
     "axios": "0.16.2",
     "babel-polyfill": "^6.26.0",
-    "element-ui": "^2.0.5",
+    "echarts": "^4.0.4",
+    "element-ui": "^2.2.1",
     "install": "^0.10.1",
     "js-cookie": "2.1.4",
     "js-md5": "^0.6.0",
@@ -22,6 +24,7 @@
     "nprogress": "0.2.0",
     "qiniu-js": "^1.0.23",
     "sortablejs": "^1.6.1",
+    "v-charts": "^1.16.3",
     "videojs-contrib-hls": "^5.12.2",
     "vue": "^2.5.3",
     "vue-i18n": "^7.2.0",

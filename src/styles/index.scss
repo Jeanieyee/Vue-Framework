@@ -6,7 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-  min-width: 1200px;
+  min-width: 1280px;
+  background: #f6f6f6;
+  font-size: 14px;
 }
 
 html {
@@ -18,7 +20,12 @@ ul, li {
   margin: 0;
   padding: 0;
 }
-
+img{
+  display: block;
+}
+i, em{
+  font-style: normal;
+}
 *,
 *:before,
 *:after {
@@ -37,6 +44,11 @@ a:hover {
   color: inherit;
   text-decoration: none;
 }
+h1, h2, h3, h4, h5, h6, p{
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
 
 .clearfix {
   zoom: 1;
@@ -46,7 +58,6 @@ a:hover {
     clear: both;
   }
 }
-
 
 //vue router transition css
 .fade-enter-active,
@@ -58,15 +69,18 @@ a:hover {
 .fade-leave-active {
   opacity: 0;
 }
-
 //main-container全局样式
-.app-main {
-  min-height: 100%;
+.app-main{
+  width:100%;
+  .app-body{
+    margin:0 auto;
+    max-width: 1280px;
+  }
 }
 
-.app-container {
-  padding: 0 24px 24px 24px;
-}
+//.app-container {
+//  padding: 0 24px 24px 24px;
+//}
 
 .svg-icon {
   width: 1em;
@@ -75,65 +89,6 @@ a:hover {
   fill: currentColor;
   overflow: hidden;
 }
-
-//搜索框
-.search-box {
-  background: #f9f9f9;
-  padding: 24px;
-  font-size: 12px;
-  margin-bottom: 24px;
-  .search-box-label {
-    line-height: 30px;
-    text-align: right;
-    padding-right: 10px;
-    height: 30px;
-  }
-  .el-col{
-    margin-bottom: 15px;
-  }
-}
-
-//添加表单按钮
-.nav-button {
-  float: right;
-  margin-top: -55px;
-  width: auto;
-  padding: 7px 14px;
-}
-
-.add-label {
-  height: 36px;
-  line-height: 36px;
-  text-align: right;
-  padding-right: 10px;
-  font-size: 12px;
-  word-break: keep-all;
-}
-
-.add-label-left {
-  @extend .add-label;
-  text-align: left;
-}
-
-.color-red {
-  color: $red;
-}
-
-.color-green {
-  color: #44aa77;
-}
-
-.color-blue {
-  color: #4a90e2;
-}
-.color-999 {
-  color: #999999;
-}
-
-.font12 {
-  font-size: 12px;
-}
-
 .fll {
   float: left;
 }
@@ -145,230 +100,6 @@ a:hover {
 .clear {
   clear: both;
 }
-
-.cur-pointer{
-  cursor: pointer;
-}
-.w-auto{
-  width: auto !important;
-}
-
-//图标
-.delete-icon {
-  background: url('image/icon/delet.png');
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-
-,
-.un-delet-icon {
-  background: url("image/icon/un-delet.png");
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-right: 30px;
-  background-size: 100% 100%;
-}
-
-.un-edit-icon {
-  background: url("image/icon/un-edit.png");
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-}
-
-.edit-icon {
-  background: url('image/icon/edit.png');
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-
-.designate-icon{
-  background: url('image/icon/designate.png');
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-
-.copy-icon {
-  background: url("image/icon/copy.png") no-repeat 50% 48%;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-.pub-icon {
-  background: url("image/icon/pub.png") no-repeat 50% 48%;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-.cancel-pub-icon {
-  background: url("image/icon/cancel-pub.png") no-repeat 50% 48%;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-
-.add2-icon {
-  background: url("image/icon/add2.png") no-repeat 50% 48%;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-
-.save-icon {
-  background: url('image/icon/save.png');
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-
-.check-icon {
-  background: url('image/icon/check.png');
-  display: inline-block;
-  width: 16px;
-  height: 12px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-
-.un-check-icon {
-  background: url("image/icon/un-check.png");
-  display: inline-block;
-  width: 16px;
-  height: 12px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-}
-
-.radio-icon {
-  background: url("image/icon/radio.png") no-repeat;
-  background-size: 16px 16px;
-  height: 16px;
-  width: 16px;
-  display: inline-block;
-  margin-bottom: -3px;
-  margin-right: 4px;
-  cursor: pointer;
-}
-
-.radio-checked {
-  background: url("image/icon/radio-check.png") no-repeat;
-  background-size: 16px 16px;
-}
-
-.choice-icon {
-  background: url("image/icon/choice.png") no-repeat;
-  background-size: 16px 16px;
-  height: 16px;
-  width: 16px;
-  display: inline-block;
-  margin-bottom: -3px;
-  margin-right: 4px;
-  cursor: pointer;
-}
-
-.choice-checked {
-  background: url("image/icon/choice-check.png") no-repeat;
-  background-size: 16px 16px;
-}
-
-.up-icon {
-  background: url("image/icon/up.png");
-  display: inline-block;
-  width: 10px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-
-.down-icon {
-  background: url("image/icon/down.png");
-  display: inline-block;
-  width: 10px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-  cursor: pointer;
-}
-
-.un-up-icon {
-  background: url("image/icon/up-disabled.png");
-  display: inline-block;
-  width: 10px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-}
-
-.un-down-icon {
-  background: url("image/icon/down-disabled.png");
-  display: inline-block;
-  width: 10px;
-  height: 16px;
-  background-size: 100% 100%;
-  margin-right: 30px;
-}
-
-.add-icon {
-  background: url("image/icon/add.png") no-repeat 50% 48%;
-  background-size: 11px 11px;
-  height: 36px;
-  width: 20px;
-  line-height: 36px;
-  display: inline-block;
-}
-
-.fold-icon {
-  background: url("image/icon/icon-fold.png") no-repeat;
-  display: inline-block;
-  background-size: cover;
-  height: 16px;
-  width: 16px;
-  cursor: pointer;
-}
-
-.unfold-icon {
-  background: url("image/icon/icon-unfold.png") no-repeat;
-  display: inline-block;
-  background-size: cover;
-  height: 16px;
-  width: 16px;
-  cursor: pointer;
-}
-
-
-
 //加载进度条
 #nprogress .peg {
   box-shadow: 0 0 10px #f2cd00, 0 0 5px #f2cd00 !important;
@@ -390,196 +121,11 @@ a:hover {
 .text-left {
   text-align: left !important;
 }
-
-.base-title {
-  &:before{
-    content: '';
-    display: inline-block;
-    width: 2px;
-    height: 14px;
-    background-color: #333;
-    float: left;
-    margin-right: 4px;
-    margin-top: 8px;
-  }
-  font-size: 14px;
-  //padding-left: 4px;
-  //border-left: 2px #333 solid;
-  line-height: 30px;
-  height: 30px;
+.text-right{
+  text-align: right !important;
 }
-
-.detial-img {
-  height: 100px;
-  margin-top: 10px;
-}
-.m0 {
-  margin: 0 !important;
-}
-.mt10 {
-  margin-top: 10px;
-}
-.mt15 {
-  margin-top: 15px;
-}
-.mt20 {
-  margin-top: 20px;
-}
-
-.mt25 {
-  margin-top: 25px;
-}
-
-.mr24 {
-  margin-right: 24px;
-}
-
-.mb24 {
-  margin-bottom: 24px;
-}
-
-.ml8 {
-  margin-left: 8px;
-}
-
-.pl8 {
-  padding-left: 8px;
-}
-.tr {
-  text-align: right;
-}
-.tc {
-  text-align: center;
-}
-.w-50{
-  width: 50% !important;
-}
-.w200{
-  width: 200px;
-}
-.w300{
-  width: 300px;
-}
-
-.resouce-search {
-  margin-top: -55px;
-  margin-right: 25px;
-}
-
-.has-upload-search {
-  margin-right: 135px !important;
-}
-
-.resouce-upload {
-  margin-top: -55px;
-  margin-right: 25px;
-}
-
-.img-prev {
-  margin-bottom: 20px;
-}
-
-.no-back {
-  background: none !important;
-}
-
-.no-border {
-  border: none !important;
-}
-
-.bottom-save {
-  text-align: center;
-  padding: 24px 0;
-  border-top: 1px #e4e4e4 solid;
-}
-
-.table-img {
-  height: 40px;
-  width: 40px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.my-cursor {
-  cursor: pointer;
-}
-
-.display-none {
-  display: none;
-}
-.display-block {
-  display: block;
-}
-
-.add-course-box {
-  padding: 24px 0;
-}
-
-//添加图片的框
-.up-pic-box {
-  height: 100px;
-  width: 100px;
-  border: 1px #CCCCCC dashed;
-  text-align: center;
-  padding-top: 24px;
-  color: #4a90e2;
-  position: relative;
-  font-size: 12px;
-  cursor: pointer;
-  img {
-    height: 30px;
-    width: 30px;
-    display: block;
-    margin-left: 35px;
-
-  }
-}
-
-.table-input{
-  margin-top: 18px;
-}
-.imitate-el-table{
-  th,td{
-    padding: 0 18px;
-  }
-}
-
-.upload-all {
-  padding-top: 10px;
-}
-
-.tutor-img {
-  width: 40px;
-  height: 40px;
-  margin-top: 8px;
-}
-
-.add-tutor-img {
-  height: 100px;
-  width: 100px;
-}
-
-//预览视频
-.pre-video {
-  width: 100%;
-  height: 400px;
-}
-
-//预览底部
-.content-bottom {
-  height: 30px;
-}
-
-//vr播放器
-.vr-player-box {
-  position: relative;
-  height: 500px;
-  width: 100%;
-}
-
-.radio-block{
-  display: block;
-  margin:0!important;
+.text-center{
+  text-align: center !important;
 }
 
 .text-ellipsis {

@@ -2,8 +2,33 @@ import i18n from '../i18n'
 import moment from 'moment'
 
 const filter = function (Vue, options) {
-  Vue.filter('date', function (date, format) {
-    return date ? moment(date).format(format) : ''
+  Vue.filter('date', function (dates, fmt) {
+    if (dates === null) {
+      return
+    }
+    let date = new Date(dates)
+    if (/(y+)/.test(fmt)) {
+      fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
+    }
+    let o = {
+      'M+': date.getMonth() + 1,
+      'd+': date.getDate(),
+      'h+': date.getHours(),
+      'm+': date.getMinutes(),
+      's+': date.getSeconds()
+    }
+
+    function padLeftZero(str) {
+      return ('00' + str).substr(str.length)
+    }
+
+    for (let k in o) {
+      if (new RegExp(`(${k})`).test(fmt)) {
+        let str = o[k] + ''
+        fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : padLeftZero(str))
+      }
+    }
+    return fmt
   })
   Vue.filter('number', function (number, n) {
     if (n != 0) {

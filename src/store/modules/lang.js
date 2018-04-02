@@ -10,7 +10,7 @@ if(language.toUpperCase().indexOf('ZH-CN')!=-1){
 }else if(language.toUpperCase().indexOf('ZH-TAI')!=-1){
   myLang='tw'
 }
-let getLang=getStore('lang')||myLang
+let getLang = getStore('lang') || myLang
 setStore('lang',getLang)
 i18n.locale = getLang
 document.title=i18n.messages[i18n.locale].Title

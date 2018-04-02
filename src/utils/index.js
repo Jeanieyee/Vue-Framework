@@ -23,7 +23,6 @@ export const getStore = name => {
   }else{
     return window.localStorage.getItem(name)
   }
-
 };
 
 export function parseTime(time, cFormat) {
@@ -89,5 +88,13 @@ export function formatDate(timeStamp, hourFlag = false, joiner = '-') {
   var hour = time.getHours();
   var minute = time.getMinutes();
   return hourFlag ? year + joiner + (month < 10 ? '0' + month : month) + joiner + (date < 10 ? '0' + date : date) + ' ' + (hour < 10 ? '0' + hour : hour) + ':' + (minute < 10 ? '0' + minute : minute) : year + joiner + (month < 10 ? '0' + month : month) + joiner + (date < 10 ? '0' + date : date);
+}
+
+/**
+ * 深拷贝 【这种方法能正确处理的对象只有 Number, String, Boolean, Array, 扁平对象，即那些能够被 json 直接表示的数据结构】
+ * @param object
+ */
+export function deepClone(object) {
+  return JSON.parse(JSON.stringify(object))
 }
 

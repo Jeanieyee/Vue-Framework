@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 export default {
   // apiUrl        : apiUrl,
-  qiniuUrl      : 'http://upload.qiniu.com/',
-  domain        : 'http://res.chinamons.com/',
+  qiniuUrl      : 'https://up.qbox.me/',
+  domain        : 'https://oss.zhihanyun.com/'
 }
 

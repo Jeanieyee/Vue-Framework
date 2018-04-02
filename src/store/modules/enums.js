@@ -1,6 +1,7 @@
+import enumsList from '@/utils/enums'
 const enums = {
   state: {
-    enumsList: []
+    enumsList: enumsList
   },
   mutations: {
     GET_ENUMS: (state,data) => {

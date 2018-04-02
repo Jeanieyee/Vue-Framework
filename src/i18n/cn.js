@@ -1,5 +1,5 @@
 const cn = {
-  // common
-  Title: ''
+  // home
+  Home: '首页'
 }
 export default cn
