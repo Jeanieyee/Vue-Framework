@@ -12,7 +12,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" type="text/scss">
   @import '~normalize.css/normalize.css';
   // normalize.css 样式格式化
   @import './styles/index.scss'; // 全局自定义的css样式

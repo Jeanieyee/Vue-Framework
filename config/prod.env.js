@@ -1,4 +1,5 @@
+'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  BASE_API: '"http://api.xuezhi.zhihanyun.com"',
+  BASE_API: '"http://api.ececloud.cn"',
 }

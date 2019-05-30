@@ -26,7 +26,6 @@ new Vue({
   i18n,
   router,
   store,
-  template: '<App/>',
-  components: { App }
+  render: h => h(App)
 })
 
